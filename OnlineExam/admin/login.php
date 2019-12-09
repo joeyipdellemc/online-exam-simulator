@@ -4,12 +4,13 @@
 	include_once ($filepath.'/../classes/Admin.php');
 	$ad = new Admin();
 ?>
+
 <?php 
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$adminData = $ad->getAdminData($_POST);
 	}
 ?>
-<style>
+<!-- <style>
 .main h1{
 	font-family: "Times New Roman", Georgia, Serif;
 		font-size: 35px;
@@ -20,10 +21,10 @@
 		font-size: 20px;
 		color:#040303;
 }
-</style>
-<div class="main">
+</style> --> 
+<div class="container-fluid">
 <h1>Admin Login</h1>
-<div class="adminlogin">
+<div class="container-fluid">
 	<form action="" method="post">
 		<table>
 			<tr> 
@@ -36,7 +37,7 @@
 			</tr>
 			<tr>
 				<td></td>
-				<td style="text-align: center;font-size: 25px;"><input type="submit" name="login" value="Login Now"/></td>
+				<td> <input type="submit" name="login" value="Login"/></td>
 			</tr>
 			<tr>
 				<td colspan="2">
@@ -51,4 +52,3 @@
 	</from>
 </div>
 </div>
-<?php include 'inc/footer.php'; ?>

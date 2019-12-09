@@ -2,7 +2,7 @@
     $filepath = realpath(dirname(__FILE__));
 	include_once ($filepath.'/inc/header.php');
 ?>
-<style>
+<!--<style>
 	.main{
 		
 		
@@ -21,10 +21,10 @@
 		font-family: "Times New Roman", Georgia, Serif;
 		font-size: 20px;
 		}
-</style>
-<div class="main">
+</style> -->
+<div class="container-fluid">
 <h1>Admin Panel</h1>
-	<div class = "adminpanel">
+	<div class = "container-fluid p-3">
 		<h2>Welcome to Control Admin Panel</h2>
 		<p>You can manage User and Online Exam from here.......</p>
 	</div>

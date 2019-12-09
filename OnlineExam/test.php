@@ -53,13 +53,6 @@
 </body>
 </html>
 
-<style>
-.alamgir{
-	font-family: "Times New Roman", Georgia, Serif;
-	 color:#05020d;
-	 font-size: 20px;
-}
-</style>
 <html>
 <head>
 
@@ -70,7 +63,7 @@
 		</div>
 	</body>
 </html>
-<div class="main">
+<div class="container-fluid p-3">
 <h1>Question <?php echo $question['quesNo']; ?> of <?php echo $total; ?></h1>
 	<div class="test">
 		<form method="post" action="">

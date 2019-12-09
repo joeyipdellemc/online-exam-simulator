@@ -1,4 +1,4 @@
- <style>
+<!-- <style>
  .footeroption{background:#202633;color:#fff;text-align:center;padding:20px;font-family: "Times New Roman", Times, serif;}
  </style>
  
@@ -8,4 +8,9 @@
 	</section>
 </div>
 </body>
-</html>
+</html> -->
+
+
+
+
+
