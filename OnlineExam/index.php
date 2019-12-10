@@ -22,9 +22,5 @@
 			 </tr>
        </table>
 	   </form>
-	   <p>New User ? <a href="register.php">Signup</a> Free</p>
-		<!-- <span class="empty" style ="display:none">Field Must Not be Empty !</span>
-		<span class="error" style ="display:none">Email or Password not Matched !</span>
-		<span class="disable" style ="display:none">User ID Disable !</span> -->
-	
+	   <p>New User ? <a href="register.php">Signup</a> Free</p>	
 </div>
