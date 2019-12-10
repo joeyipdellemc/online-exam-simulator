@@ -9,12 +9,10 @@ padding-top: 20px;
 width: 350px;
 }
 </style>
-<div class="main">
+<div class="container-fluid p-3">
 <h1>Online Exam System - User Registration</h1>
-	<div class="segment" style="margin-right:30px;">
-		<img src="img/regi.png"/>
-	</div>
-	<div class="segment">
+
+	<div class="container-fluid p-3">
 	<form action="" method="post">
 		<table>
 		<tr>
@@ -36,7 +34,7 @@ width: 350px;
          </tr>
          <tr>
            <td></td>
-           <td style="text-align: center;font-size: 25px;"><input type="submit" id="regsubmit" value="Signup Now"></td>
+           <td><input type="submit" id="regsubmit" value="Signup Now"></td>
          </tr>
        </table>
 	   </form>
