@@ -29,19 +29,19 @@ $(function(){
 			data: dataString,
 			success: function(data){
 				if($.trim(data) == "empty"){
-					$(".empty").show();
+					$("#empty").show();
 					setTimeout(function(){
-						$(".empty").fadeOut();
+						$("#empty").fadeOut();
 					},4000);
 				}else if($.trim(data) == "disable"){
-					$(".disable").show();
+					$("#disable").show();
 					setTimeout(function(){
-						$(".disable").fadeOut();
+						$("#disable").fadeOut();
 					},4000);
 				}else if($.trim(data) == "error"){
-					$(".error").show();
+					$("#error").show();
 					setTimeout(function(){
-						$(".error").fadeOut();
+						$("#error").fadeOut();
 					},4000);
 				}else{
 					window.location = "exam.php";
@@ -51,8 +51,3 @@ $(function(){
 		return false;
 	});
 	});
-
-$('.nav li').click(function(){
-    $('.nav li').removeClass('active');
-    $(this).addClass('active');
-});
