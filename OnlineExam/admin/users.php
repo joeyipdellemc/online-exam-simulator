@@ -19,15 +19,8 @@
 		$delUser = $usr->deleteUser($delid);
 	}
 ?>
-<style>
-	.main h1{
-		
-		font-family: "Times New Roman", Georgia, Serif;
-		font-size: 30px;
-		color:#5e0c17;
-	}
-</style>
-<div class="main">
+
+<div class="container">
 	<h1>Admin Panel - Manage User</h1>
 	<?php 
 		if(isset($dblUser)){
@@ -40,14 +33,8 @@
 			echo $delUser;
 		}
 	?>
-	<style>
-		.manageuser{
-			font-family: "Times New Roman", Times, serif;
-			font-size: 20px;
-		}
-		
-	</style>
-		<div class = "manageuser">
+
+		<div class = "container">
 			<table class = "tblone">
 			<tr>
 				<th>Number</th>
@@ -116,4 +103,3 @@
 			</table>
 		<div/>
 </div>
-<?php include 'inc/footer.php'; ?>

@@ -22,11 +22,8 @@
 		font-size: 20px;
 		}
 </style> -->
-<div class="container-fluid">
-<h1>Admin Panel</h1>
-	<div class = "container-fluid p-3">
+<div class="container">
 		<h2>Welcome to Control Admin Panel</h2>
+		<h1>Admin Panel</h1>
 		<p>You can manage User and Online Exam from here.......</p>
-	</div>
 </div>
-<?php include 'inc/footer.php'; ?>
