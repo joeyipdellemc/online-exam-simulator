@@ -22,8 +22,10 @@
 		font-size: 20px;
 		}
 </style> -->
-<div class="container">
+<section>
+<div class="container-fluid">
 		<h2>Welcome to Control Admin Panel</h2>
 		<h1>Admin Panel</h1>
 		<p>You can manage User and Online Exam from here.......</p>
 </div>
+</section>

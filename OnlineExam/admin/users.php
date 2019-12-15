@@ -35,7 +35,7 @@
 	?>
 
 		<div class = "container">
-			<table class = "tblone">
+			<table class = "table">
 			<tr>
 				<th>Number</th>
 				<th>Name</th>

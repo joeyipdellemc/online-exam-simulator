@@ -5,14 +5,15 @@
 	$ad = new Admin();
 ?>
 
+
+
 <?php 
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$adminData = $ad->getAdminData($_POST);
 	}
 ?>
 
-<style>
-	
+<style>	
 html,body{
 background-image: url('http://getwallpapers.com/wallpaper/full/9/c/f/52567.jpg');
 background-size: cover;

@@ -15,24 +15,17 @@
 	$total = $exm->getTotalRows();
 	$next = $total+1;
 ?>
-<style>
-	.main h1{
-		
-		font-family: "Times New Roman", Georgia, Serif;
-		font-size: 30px;
-		color:#5e0c17;
-	}
-</style>
-<div class="main">
+
+<div class="container">
 <h1>Admin Panel - Add Question</h1>
 <?php 
 	if(isset($addQue)){
 		echo $addQue;
 	}
 ?>
-	<div class = "adminpanel">
+	<div class = "container">
 		<form action = "" method = "post">
-		<table> 
+		<table class = "table"> 
 			<tr>
 				<td>Question No</td>
 				<td>:</td>

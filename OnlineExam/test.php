@@ -14,7 +14,6 @@
 		$process = $pro->processData($_POST);
 	}
 ?>
-
 <html>
 <body>
 <div id="countdown"></div>
@@ -54,24 +53,33 @@
 </body>
 </html>
 
+<style>
+.alamgir{
+	font-family: "Times New Roman", Georgia, Serif;
+	 color:#05020d;
+	 font-size: 20px;
+
+}
+</style>
 <html>
 <head>
 
 </head>
 	<body>
-		<div class="alamgir">
+		<div class="container" style="border: thin solid black">
 		<marquee>Your Exam is Running</marquee>
 		</div>
 	</body>
 </html>
-<div class="container-fluid p-3">
+<div class="container">
 <h1>Question <?php echo $question['quesNo']; ?> of <?php echo $total; ?></h1>
 	<div class="test">
 		<form method="post" action="">
+		
 		<table> 
 			<tr>
 				<td colspan="2">
-				 <h3>Que <?php echo $question['quesNo']; ?>: <?php echo $question['ques']; ?></h3>
+				 <h7>Que <?php echo $question['quesNo']; ?>: <?php echo $question['ques']; ?></h7>
 				</td>
 			</tr>
 			<?php 
@@ -121,6 +129,7 @@
 			</tr>
 			
 		</table>
+		
 		</form>
 </div>
  </div>

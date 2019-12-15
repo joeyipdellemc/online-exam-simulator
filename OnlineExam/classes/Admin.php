@@ -27,7 +27,7 @@ class Admin{
 			header("Location:index.php");
 			
 		}else{
-			$msg = "<span class='error'>Username/Password Not Matched!!!!</span>";
+			$msg = "<span class='loginAlert'>Username/Password Not Matched!!!!</span>";
 			return $msg;
 		}
 		

@@ -28,8 +28,8 @@ header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
   	
  <!-- Origial -->
   	
-  	<script type = "text/javascript" src="jvascrpt/jquery.js"></script>
-   	<script type = "text/javascript" src="jvascrpt/main.js"></script>
+  	<script type = "text/javascript" src="/jvascrpt/jquery.js"></script>
+   	<script type = "text/javascript" src="/jvascrpt/main.js"></script>
 
 <!-- BootStrap 4.1.1 -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -46,19 +46,21 @@ header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
 
 <body>
 
+	<?php
+		if(isset($_GET['action']) && $_GET['action'] == 'logout'){
+			Session::destroy();
+			header("Location:login.php");
+			exit();
+		}
+	?>
+
 <div class="container-fluid"> 
 	<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
   		<a class="navbar-brand" href="#">MalfunStudio</a>
   		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     		<span class="navbar-toggler-icon"></span>
  		</button>
- 		<?php
-		if(isset($_GET['action']) && $_GET['action'] == 'logout'){
-			Session::destroy();
-			header("Location:login.php");
-			exit();
-		}
-		?>
+
   		<div class="collapse navbar-collapse" id="navbarNav">
     		<ul class="navbar-nav">
 
@@ -75,9 +77,8 @@ header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
       			</li>
 
       			<li class="nav-item">
-        			<a class="nav-link" href="../profile.php">Profile<span class="sr-only">(current)</span></a>
+        			<a class="nav-link" href="queslist.php">List Question<span class="sr-only">(current)</span></a>
       			</li>
-
       			<li class="nav-item">
         			<a class="nav-link" a href="?action=logout">Log Out</a>
       			</li>
@@ -86,35 +87,4 @@ header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
   		</div>
 	</nav>
 </div>
--->
-<!--
-	<title>Online Exam Admin</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta http-equiv="Pragma" content="no-cache">
-	<meta http-equiv="no-cache">
-	<meta http-equiv="Expires" content="-1">
-	<meta http-equiv="Cache-Control" content="no-cache">
-	<link rel="stylesheet" href="css/admin.css">
-</head>
-<body>
-<div class="phpcoding">
-	<section class="headeroption"></section>
-	<?php
-		if(isset($_GET['action']) && $_GET['action'] == 'logout'){
-			Session::destroy();
-			header("Location:login.php");
-			exit();
-		}
-	?>
-		<section class="maincontent">
-		<div class="menu">
-		<ul>
-			<li><a href="index.php">Home</a></li>
-			<li><a href="users.php">Manage User</a></li>
-			<li><a href="quesadd.php">Add Ques</a></li>
-			<li><a href="queslist.php">Ques List</a></li>
-			<li><a hred="/../profile.php">Profile</a></li>
-			<li><a href="?action=logout">Logout</a></li>
-		</ul>
-	 </div>
-	-->
+

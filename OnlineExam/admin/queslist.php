@@ -25,8 +25,8 @@
 			echo $delQue;
 		}
 	?>
-		<div class = "quelist">
-			<table class = "tblone">
+		<div class = "container">
+			<table class = "table">
 			<tr>
 				<th width = "10%">No</th>
 				<th width = " 70%">Questions</th>
@@ -44,6 +44,7 @@
 			<tr>
 				<td><?php echo $i; ?></td>
 				<td><?php echo $result['ques']; ?></td>
+				<td><?php echo $result['ans'];?></td>
 				<td>
 					<a onclick = "return confirm('Are you sure to Remove')" href = "?delque=<?php echo $result['quesNo']; ?>">Remove</a>
 				</td>
