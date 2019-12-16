@@ -2,21 +2,20 @@
 <?php 
 	Session::checkSession();
 	$userid = Session::get("userid");
+	echo $userid;
 ?>
-<style>
-	.profile {width:530px;margin: 0 auto;border:1px solid #ddd;padding:30px 50px 50px;}
-</style>
 
-<div class="main">
+
+<div class="container">
 <h1>Your Profile</h1>
-<div class="profile">
+<div class="container">
 	<form action="" method="post">
 	<?php
 	$getData = $usr->getUserData($userid);
 	if($getData){
 		$result = $getData->fetch_assoc();
 ?>
-		<table class="tbl">    
+		<table>    
 			 <tr>
 			   <td>Name</td>
 			   <td><input name="name" type="text" value="<?php echo $result['name']; ?>"/></td>

@@ -42,4 +42,3 @@
 		<a href="starttest.php">Again Start Test!!!!</a>
 </div>
  </div>
-<?php include 'inc/footer.php'; ?>

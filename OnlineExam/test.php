@@ -18,6 +18,137 @@
 <body>
 <div id="countdown"></div>
 <div id="notifier"></div>
+
+<!-- Time Coounter 1 --> 
+</body>
+</html>
+
+
+<html>
+<head>
+
+</head>
+	<body>
+		<div class="container">
+		<marquee>Your Exam is Running</marquee>
+		</div>
+	</body>
+</html>
+<div class="container" >
+<h3>Question <?php echo $question['quesNo']; ?> of <?php echo $total; ?></h3>
+	<div class="container" >
+		<form method="post" action="">
+		
+		<table> 
+			<tr>
+				<td colspan="2" style="border: thin solid black; padding: 50px;" >
+				 <h7>Que <?php echo $question['quesNo']; ?>: <?php echo $question['ques']; ?></h7>
+				</td>
+			</tr>
+		</table>
+			<?php 
+				$answer = $exm->getAnswer($number);   
+				if($answer){
+					while($result = $answer->fetch_assoc()){
+			?>
+		<table >
+			<tr >
+				<td style=" padding: 20px;">
+				 <input type="radio" name="ans" id="ans" value="<?php echo $result['id']; ?>"/><?php echo $result['ans']; ?>
+				</td>
+			</tr>
+				<?php } } ?>
+		</table>
+
+		<!--
+			<table >	
+			<tr>
+			  <td>
+				<input type="submit" name="submit" value="Next Question"/>
+		-->
+				<!-- Time Counter 2-->
+		
+		<!--		
+				<input type="hidden" name="number" value= "<?php echo $number; ?>"/>
+			</td>
+			</tr>
+			
+		</table>
+		-->
+
+<?php 
+	$answer = $exm->getAnswer($number);   
+		if($answer){
+			while($result = $answer->fetch_assoc()){
+				if($result['rightAns'] == '1'){
+					$correctAnsID = $result['id']; 
+
+					}
+				} 
+			} 
+?>
+
+
+		<!-- Button trigger modal -->
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  		Sumbit
+		</button>
+
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLongTitle">
+
+					<script>
+					    $(document).ready(function(){
+					        $("input[type='radio']").click(function(){
+					            var radioValue = $("input[name='ans']:checked").val();
+					            if(radioValue == <?php echo($correctAnsID) ?>){
+					                document.getElementById("exampleModalLongTitle").innerHTML = "Correct";
+					            } else {
+					            	document.getElementById("exampleModalLongTitle").innerHTML = "Incorrect";		
+					            }
+					        });
+					    });
+					</script>		        
+
+
+		    	</h5>
+		        
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		      	<?php 
+					$answer = $exm->getAnswer($number);   
+					if($answer){
+						while($result = $answer->fetch_assoc()){
+							if($result['rightAns'] == '1'){
+								echo $result['ans'];
+							}
+						} 
+					} 
+				?>
+		      </div>
+		      <div class="modal-footer">
+		        <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+		        <button type="submit" name="submit" class="btn btn-primary">Next</button>
+		        <input type="hidden" name="number" value= "<?php echo $number; ?>"/>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	
+	 	</form>
+	</div>
+ </div>
+
+
+
+<!-- Time Counter 1
 <script type="text/javascript">
 (function () {
   function display( notifier, str ) {
@@ -50,56 +181,14 @@
 })();
  
 </script>
-</body>
-</html>
+-->
 
-<style>
-.alamgir{
-	font-family: "Times New Roman", Georgia, Serif;
-	 color:#05020d;
-	 font-size: 20px;
-
-}
-</style>
-<html>
-<head>
-
-</head>
-	<body>
-		<div class="container" style="border: thin solid black">
-		<marquee>Your Exam is Running</marquee>
-		</div>
-	</body>
-</html>
-<div class="container">
-<h1>Question <?php echo $question['quesNo']; ?> of <?php echo $total; ?></h1>
-	<div class="test">
-		<form method="post" action="">
-		
-		<table> 
-			<tr>
-				<td colspan="2">
-				 <h7>Que <?php echo $question['quesNo']; ?>: <?php echo $question['ques']; ?></h7>
-				</td>
-			</tr>
-			<?php 
-				$answer = $exm->getAnswer($number);   
-				if($answer){
-					while($result = $answer->fetch_assoc()){
-			?>
-			<tr>
-				<td>
-				 <input type="radio" name="ans" value="<?php echo $result['id']; ?>"/><?php echo $result['ans']; ?>
-				</td>
-			</tr>
-				<?php } } ?>
-			<tr>
-			  <td>
-				<input type="submit" name="submit" value="Next Question"/>
+<!-- Time Coounter 2
 					<?php
 				if(($question['quesNo']+1)<=$total)
 				  {
 				?>
+				
 				<script>
 				setTimeout(function() {
 					window.location.href = "test.php?q=<?php echo $question['quesNo']+1; ?>";
@@ -107,6 +196,7 @@
 					}, 60000);
 				
 				</script>	
+				
 				<?php
 				  }
 				?>
@@ -114,6 +204,7 @@
 				if(($question['quesNo'])==$total)
 				  {
 				?>
+				
 				<script>
 				setTimeout(function() {
 					window.location.href = "final.php";
@@ -121,16 +212,22 @@
 					}, 60000);
 				
 				</script>	
+				
 				<?php
 				  }
 				?>
-				<input type="hidden" name="number" value= "<?php echo $number; ?>"/>
-			</td>
-			</tr>
-			
-		</table>
-		
-		</form>
-</div>
- </div>
-<?php include 'inc/footer.php'; ?>
+
+-->
+
+<!-- Detect Answer
+	<script>
+    $(document).ready(function(){
+        $("input[type='radio']").click(function(){
+            var radioValue = $("input[name='ans']:checked").val();
+            if(radioValue == <?php echo($correctAnsID) ?>){
+                alert("Selected " + radioValue);
+            }
+        });
+    });
+</script>
+-->
